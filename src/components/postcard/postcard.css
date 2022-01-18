@@ -1,0 +1,100 @@
+.post-card {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid white;
+  transition-duration: 0.1s;
+}
+
+.post-card:hover {
+  border: 1px solid var(--bluebg);
+}
+
+.post-card:hover .arrow {
+  display: flex;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+@keyframes show-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.arrow {
+  animation-name: show-up;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  display: none;
+  position: absolute;
+  top: -0.65rem;
+  right: -0.65rem;
+  width: 2.5rem;
+  color: var(--bluetext);
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: var(--bluebg);
+}
+
+.profile > .circle {
+  background-color: var(--bluetext);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  border-radius: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.detail > .company {
+  color: gray;
+}
+
+.detail > .name {
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  color: gray;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
