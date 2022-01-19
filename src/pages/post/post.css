@@ -1,0 +1,139 @@
+.post-detail-container {
+  padding-bottom: 3rem;
+}
+
+.post-detail {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.post-detail > .profile {
+  transition-duration: 0.1s;
+  max-width: max-content;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.35rem;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.post-detail > .profile:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.title-detail {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.description-detail {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: gray;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.comment-container {
+  width: 100%;
+}
+
+.comment-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.comment-box > .left-box {
+  flex: 0.2;
+  height: 7.5rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-box > .right-box {
+  flex: 0.8;
+}
+
+.picture-comment {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.picture-comment > .picture > p {
+  color: white;
+  font-weight: 300;
+}
+
+.picture-comment > .picture {
+  position: relative;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.line-comment {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.line-comment > .line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.comment-container > .comment-box:last-child > .left-box > .line-comment .line {
+  width: 1px;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.right-box {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.right-box {
+  padding: 1rem;
+}
+
+.name-comments {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.body-comments {
+  display: -webkit-box;
+  font-size: 0.75rem;
+}

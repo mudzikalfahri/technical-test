@@ -14,13 +14,13 @@ function Layout({ children }) {
             <NavLink to="/" className="icon-container">
               <BiHomeAlt className="icon" />
             </NavLink>
-            <NavLink to="/search" className="icon-container">
+            <NavLink to="/post" className="icon-container">
               <FiSearch className="icon" />
             </NavLink>
-            <NavLink to="/friends" className="icon-container">
+            <NavLink to="/user" className="icon-container">
               <BsPeople className="icon" />
             </NavLink>
-            <NavLink to="/profile" className="icon-container">
+            <NavLink to="/bookmark" className="icon-container">
               <BsBookmark className="icon" />
             </NavLink>
           </div>

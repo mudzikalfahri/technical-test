@@ -12,7 +12,7 @@ const Home = () => {
   }, []);
   return (
     <div className="home">
-      {data && data.map((item) => <PostCard item={item} />)}
+      {data && data.map((item, idx) => <PostCard key={idx} item={item} />)}
       {!data && "loading"}
     </div>
   );
