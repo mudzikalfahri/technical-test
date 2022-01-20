@@ -6,3 +6,10 @@
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
+
+.no-saved-item {
+  text-align: center;
+  font-size: 0.85rem;
+  padding-top: 2rem;
+  color: gray;
+}

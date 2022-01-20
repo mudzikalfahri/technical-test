@@ -10,7 +10,9 @@ function Saved() {
   const idList = useSelector(selectSaved);
   const list = useMemo(() => idList, [idList]);
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true);
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) =>
@@ -18,9 +20,12 @@ function Saved() {
           (eachOne) =>
             list.includes(eachOne.id) && setData((prev) => [...prev, eachOne])
         )
-      );
+      )
+      .finally(() => setLoading(false));
   }, [list]);
-  if (data.length <= 0) return <Loading />;
+  if (loading) return <Loading />;
+  if (data.length <= 0)
+    return <p className="no-saved-item">You have no saved item</p>;
   return (
     <div className="saved-container">
       <h1 className="saved-h1">Saved Posts</h1>
