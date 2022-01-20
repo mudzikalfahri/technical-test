@@ -20,7 +20,7 @@ function Layout({ children }) {
             <NavLink to="/user" className="icon-container">
               <BsPeople className="icon" />
             </NavLink>
-            <NavLink to="/bookmark" className="icon-container">
+            <NavLink to="/saved" className="icon-container">
               <BsBookmark className="icon" />
             </NavLink>
           </div>

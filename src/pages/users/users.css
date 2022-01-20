@@ -1,0 +1,64 @@
+.userlist-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.userpage-container {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.usercard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.user-card {
+  background-color: white;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.02);
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid white;
+  transition-duration: 0.1s;
+}
+
+.user-card:hover {
+  border: 1px solid var(--bluebg);
+}
+.circleee {
+  flex: 0.3;
+}
+.circle-usercard {
+  margin-right: 0.5rem;
+  width: 2.5rem;
+  background-color: var(--bluetext);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.detail-user {
+  flex: 0.7;
+}
+
+.name-usercard {
+  color: rgba(0, 0, 0, 0.9);
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.company-usercard {
+  color: gray;
+  font-size: 0.75rem;
+}

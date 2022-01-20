@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import AlbumCard from "../../components/albumcard/AlbumCard";
+import Loading from "../../components/loading/Loading";
 import "./profile.css";
 
 function Profile() {
@@ -21,7 +22,7 @@ function Profile() {
         .then((res) => setAlbums(res.data));
     }
   }, [params.id, user]);
-  if (!user || !albums) return <div className="">loading</div>;
+  if (!user || !albums) return <Loading />;
   return (
     <div className="profile-page-container">
       {/* User information section */}

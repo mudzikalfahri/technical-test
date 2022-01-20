@@ -3,13 +3,21 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CommentBox from "../../components/comment-box/CommentBox";
+import Loading from "../../components/loading/Loading";
+import { BsBookmark } from "react-icons/bs";
 import "./post.css";
+import { useDispatch } from "react-redux";
+import { addToSaved } from "../../slices/savedSlice";
+import { useSelector } from "react-redux";
+import { selectSaved } from "../../slices/savedSlice";
+import { removeFromSaved } from "../../slices/savedSlice";
 
 function Post() {
+  const dispatch = useDispatch();
   const [data, setData] = useState(null);
   const [poster, setPoster] = useState(null);
   const [comments, setComments] = useState(null);
-  console.log("rendered");
+  const savedItems = useSelector(selectSaved);
   const params = useParams();
   useEffect(() => {
     axios
@@ -31,7 +39,7 @@ function Post() {
     }
   }, [params, data]);
 
-  if (!data || !poster || !comments) return <div className="">loading</div>;
+  if (!data || !poster || !comments) return <Loading />;
   return (
     <div className="post-detail-container">
       <div className="post-detail">
@@ -48,6 +56,23 @@ function Post() {
         <div className="description-detail">
           <p>{data.body}</p>
         </div>
+        {savedItems.includes(data.id) ? (
+          <button
+            onClick={() => dispatch(removeFromSaved(data.id))}
+            className="save-post-already"
+          >
+            <BsBookmark className="saved-icon-already" />
+            <p>Saved</p>
+          </button>
+        ) : (
+          <button
+            onClick={() => dispatch(addToSaved(data.id))}
+            className="save-post"
+          >
+            <BsBookmark className="saved-icon" />
+            <p>Save this post</p>
+          </button>
+        )}
       </div>
       <div className="comment-container">
         {comments.map((comment, idx) => (
